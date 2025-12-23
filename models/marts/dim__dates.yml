@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim__dates
+    description: Calendar table from 2011-05-31 to 2014-06-30 (raw range of dates) 
+    columns:
+      - name: date
+        description: Primary key, date in format yyyy-mm-dd
+        tests:
+          - unique
+          - not_null
+      - name: year
+        description: year (number)
+      - name: month
+        description: month (number)
+      - name: day
+        description: day (number)
+      - name: quarter
+        description: quarter (number)
+      - name: month_name
+        description: Name of the month
+        tests:
+          - not_null
+      - name: month_year
+        description: Month + year
+        tests:
+          - not_null
+      - name: month_name_year
+        description: Name of the month + year
+        tests:
+          - not_null
+      - name: quarter_year
+        description: quarter + year
+        tests:
+          - not_null
+          

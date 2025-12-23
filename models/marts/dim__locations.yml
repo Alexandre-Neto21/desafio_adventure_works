@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim__locations
+    description: Locations informations dimension
+    columns:
+      - name: address_id
+        description: Primary key of the table
+        tests:
+          - unique
+          - not_null
+      - name: city_name
+        description: Name of the city
+      - name: state_name
+        description: Name of the state
+      - name: country_name
+        description: Name of the country
+      - name: continent_name
+        description: Name of the continent
