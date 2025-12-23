@@ -9,11 +9,10 @@ models:
         tests:
           - unique
           - not_null
-      - name: reason_id
-        description: Reason identificator
       - name: order_id
-        description: Foreign key for the orders table
-      - name: reason_name
-        description: Name of the reason
-      - name: reason_type
-        description: Type of the reason
+        description: Order identificator
+      - name: sales_reason
+        description: List of the reasons
+      - name: sales_reason_type for that order
+        description: List of the types of reasons for that order
+        
