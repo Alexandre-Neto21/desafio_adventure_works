@@ -10,7 +10,7 @@ with
             , cast(salesorderid as int) as order_id
             , cast(orderqty as int) as quantity
             , cast(productid as int) as product_id
-            , cast(unitprice as numeric(10,2)) as unit_price
+            , cast(unitprice as numeric(15,4)) as unit_price
             , cast(unitpricediscount as numeric(10,2)) as discount
         from source_order_details
     )

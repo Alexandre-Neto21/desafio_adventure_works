@@ -21,10 +21,10 @@ with
             , cast(billtoaddressid as int) as bill_to_address_id
             , cast(shiptoaddressid as int) as ship_to_address_id
             , cast(creditcardid as int) as credit_card_id
-            , cast(subtotal as numeric(10,2)) as subtotal
-            , cast(taxamt as numeric(10,2)) as tax_amount
-            , cast(freight as numeric(10,2)) as freight
-            , cast(totaldue as numeric(10,2)) as total
+            , cast(subtotal as numeric(15,4)) as subtotal
+            , cast(taxamt as numeric(15,4)) as tax_amount
+            , cast(freight as numeric(15,4)) as freight
+            , cast(totaldue as numeric(15,4)) as total
         from source_order_header
     )
 
