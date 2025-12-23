@@ -1,0 +1,237 @@
+version: 2
+
+sources:
+  - name: raw_adventure_works
+    description: Adventure Works sources
+    database: fea_academy
+    schema: adventure_works
+    tables:
+      - name: sales_store
+        description: Adventure Works resellers stores
+        columns:
+          - name: businessentityid
+            description: Primary Key of the table
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Reseller store name
+
+      - name: sales_customer
+        description: Adventure Works costumers
+        columns:
+          - name: customerid
+            description: Primary Key of the table
+            tests:
+              - not_null
+              - unique
+          - name: storeid
+            description: Reseller store identificator
+          - name: personid
+            description: Final customer identificator
+          - name: territoryid
+            description: Territory identificator
+
+      - name: sales_salesterritory
+        description: Sales territories table
+        columns:
+          - name: territoryid
+            description: Primary Key of the table
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Name of the territory
+          - name: group
+            description: Continent of the territory
+          - name: salesytd
+            description: Sales in the territory current year
+          - name: saleslastyear
+            description: Sales in the territory previous year
+
+      - name: sales_creditcard
+        description: Credit cards informations
+        columns:
+          - name: creditcardid
+            description: Primary Key of the table
+            tests:
+              - not_null
+              - unique
+          - name: cardtype
+            description: Type of credit card
+
+      - name: sales_salesorderheader
+        description: Order informations
+        columns:
+          - name: salesorderid
+            description: Primary Key of the table
+            tests:
+              - not_null
+              - unique
+          - name: orderdate
+            description: Date of the order
+          - name: duedate
+            description: Due date of the order
+          - name: shipdate
+            description: Ship date of the order
+          - name: status
+            description: Status of the order
+          - name: onlineorderdflag
+            description: Flag to verify if the order was made online
+          - name: customerid
+            description: Foreign key for the sales_customer table
+          - name: salespersonid
+            description: Sales person identificator
+          - name: territoryid
+            description: Foreign key for the sales_territory table
+          - name: billtoaddress
+            description: Address to bill the order
+          - name: shiptoaddress
+            description: Address to ship the order
+          - name: creditcardid
+            description: Foreign key for the sales_creditcard table
+          - name: subtotal
+            description: Subtotal of the order
+          - name: taxamt
+            description: Total tax for the order
+          - name: freight
+            description: Total freight of the order
+          - name: totaldue
+            description: Sum of subtotal, tax and freight
+
+      - name: sales_salesorderheadersalesreason
+        description: Reason of the sale
+        columns:
+          - name: salesorderid
+            description: Foreign key for the sales_salesorderheader table
+            tests:
+              - not_null
+          - name: salesreasonid
+            description: Foreign key for the sales_salesreason table
+            
+      - name: sales_salesreason
+        description: Details of sales reasons
+        columns:
+          - name: salesreasonid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Reason name
+          - name: reasontype
+            description: Type of reason
+
+      - name: sales_salesorderdetail
+        description: Details of each order. Each row represents an individual product associated with the order
+        columns:
+          - name: salesorderdetailid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: salesorderid
+            description: Foreign key for the sales_salesorderheader table
+          - name: orderqty
+            description: Quantity ordered of the product
+          - name: productid
+            description: Foreign key for the production_product table   
+          - name: unitprice
+            description: Price of the product
+          - name: unitpricediscount
+            description: Percentage of discount
+
+      - name: person_person
+        description: person involved with Adventure Works
+        columns:
+          - name: businessentityid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: persontype
+            description: Type of person
+          - name: firstname
+            description: Person's firstname
+          - name: lasttname
+            description: Person's lastname
+
+      - name: person_address
+        description: Address of the person related to Adventure Works
+        columns:
+          - name: addressid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: city
+            description: Name of the city
+          - name: stateprovinceid
+            description: Foreign key for the person_stateprovince table
+
+      - name: person_stateprovince
+        description: Details of the states/provinces
+        columns:
+          - name: stateprovinceid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: countryregioncode
+            description: Foreign key for the person_countryregion table
+          - name: name
+            description: State/province name
+          - name: territoryid
+            description: Foreign key for the sales_salesterritory table
+
+      - name: person_countryregion
+        description: Table of countries
+        columns:
+          - name: countryregioncode
+            description: Primary key of the table
+            tests:
+              - unique
+              # - not_null, initially considered not null, but there is one country (Namibia) where the conutryregioncode is null, verify data
+          - name: name
+            description: Country name
+
+      - name: production_product
+        description: Details of the products
+        columns:
+          - name: productid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Product name
+          - name: productnumber
+            description: Product number
+          - name: productsubcategoryid
+            description: Foreign key for the production_productsubcategory table
+          - name: style
+            description: Style of the product
+
+      - name: production_productsubcategory
+        description: Subcategories of products
+        columns:
+          - name: productsubcategoryid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Subcategory name
+          - name: productcategoryid
+            description: Foreign key for the production_productcategory table
+            
+      - name: production_productcategory
+        description: Categories of products
+        columns:
+          - name: productcategoryid
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Category name

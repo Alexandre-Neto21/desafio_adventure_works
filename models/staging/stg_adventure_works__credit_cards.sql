@@ -1,0 +1,15 @@
+with 
+    source_credit_card as (
+        select * 
+        from {{ source('raw_adventure_works', 'sales_creditcard') }}
+    )
+
+,   renamed as (
+        select
+            cast(creditcardid as int) as credit_card_id
+            , cast(cardtype as string) as credit_card_type
+        from source_credit_card
+    )
+
+select * 
+from renamed
