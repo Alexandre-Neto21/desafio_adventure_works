@@ -9,8 +9,8 @@ with
             cast(territoryid as int) as territory_id
             , cast(name as string) as territory_name
             , cast(group as string) as territory_continent
-            , cast(salesytd as numeric(10,2)) as sales_current_year
-            , cast(saleslastyear as numeric(10,2)) as sales_last_year
+            , cast(salesytd as numeric(15,4)) as sales_current_year
+            , cast(saleslastyear as numeric(15,4)) as sales_last_year
         from source_territory
     )
 

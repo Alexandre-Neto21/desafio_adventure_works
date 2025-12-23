@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int__sales
+  - name: int__reasons
     description: Reason informations
     columns:
       - name: reason_sk
