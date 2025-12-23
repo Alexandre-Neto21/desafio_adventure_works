@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int__products
+    description: Products informations
+    columns:
+      - name: product_id
+        description: Primary key of the table
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: Name of the product
+      - name: product_number
+        description: Number of the product
+      - name: product_category
+        description: Category of the product
+      - name: product_subcategory
+        description: Subcategory of the product
+      - name: product_style
+        description: Style of the product
