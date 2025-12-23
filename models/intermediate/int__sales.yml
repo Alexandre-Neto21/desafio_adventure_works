@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int__sales
+    description: Sales informations
+    columns:
+      - name: sales_sk
+        description: Surrogate key of the table
+        tests:
+          - unique
+          - not_null
+      - name: customer_fk
+        description: Foreign key for the customers tables
+      - name: ship_date
+        description: Date product was shipped
+      - name: order_date
+        description: Date order was made
+      - name: due_date
+        description: Order due date
+      - name: product_fk
+        description: Foreign key for the products tables
+      - name: ship_to_addres_id
+        description: Foreign key for the location tables
+      - name: order_id
+        description: Order identificator
+      - name: quantity
+        description: Quantity of each product
+      - name: unit_price
+        description: Product unit price
+      - name: discount
+        description: Percentage of discount
+      - name: status
+        description: Status of the order
+      - name: tax_amount
+        description: Tax amount for the order
+      - name: freight
+        description: Freight for the order
+      - name: subtotal
+        description: Subtotal for the order
+      - name: ordered_online
+        description: Check if the order was made online
+      - name: credit_card_id
+        description: Credit card identificator
+      - name: credit_card_type
+        description: Type of credit card
