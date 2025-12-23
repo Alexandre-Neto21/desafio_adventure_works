@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: fct__sales
+    description: Sales informations fact
+    columns:
+      - name: sales_sk
+        description: Surrogate key of the table
+        tests:
+          - unique
+          - not_null
+      - name: customer_fk
+        description: Foreign key for the customers tables
+      - name: ship_date
+        description: Date product was shipped
+      - name: order_date
+        description: Date order was made
+      - name: due_date
+        description: Order due date
+      - name: product_fk
+        description: Foreign key for the products tables
+      - name: sales_reason_fk
+        description: Foreign key for the sales reason table
+      - name: ship_to_addres_id
+        description: Foreign key for the location tables
+      - name: order_id
+        description: Order identificator
+      - name: quantity
+        description: Quantity of each product
+      - name: unit_price
+        description: Product unit price
+      - name: discount
+        description: Percentage of discount
+      - name: status
+        description: Status of the order
+      - name: tax_allocated
+        description: Tax amount allocated for the product
+      - name: freight
+        description: Freight allocated for the product
+      - name: gross_total
+        description: Total without discount for the product
+      - name: net_total
+        description: Total with discount for the product
+      - name: ordered_online
+        description: Check if the order was made online
+      - name: credit_card_id
+        description: Credit card identificator
+      - name: credit_card_type
+        description: Type of credit card

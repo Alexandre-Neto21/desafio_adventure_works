@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim__reasons
+    description: Reason informations dimension
+    columns:
+      - name: reason_sk
+        description: Surrogate key of the table
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: Order identificator
+      - name: sales_reason
+        description: List of the reasons
+      - name: sales_reason_type for that order
+        description: List of the types of reasons for that order
+        
