@@ -25,7 +25,7 @@ with
         left join stg_persons on 
             stg_customers.customer_id = stg_persons.business_entity_id
         left join stg_stores on
-            stg_customers.store_id = stg_stores.businessentityid
+            stg_customers.store_id = stg_stores.business_entity_id
     )
 
     , transformed_table as (

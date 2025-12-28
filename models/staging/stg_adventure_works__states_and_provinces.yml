@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_adventure_works__states_and_provinces
+    description: States raw informations
+    columns:
+      - name: state_id
+        description: Primary key of the table
+        tests:
+          - unique
+          - not_null
+          

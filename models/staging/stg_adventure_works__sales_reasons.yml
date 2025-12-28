@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_adventure_works__sales_reasons
+    description: Order reasons raw informations
+    columns:
+      - name: reason_id
+        description: Primary key of the table
+        tests:
+          - unique
+          - not_null
