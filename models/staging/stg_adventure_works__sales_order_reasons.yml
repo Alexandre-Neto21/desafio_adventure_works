@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_adventure_works__sales_order_reasons
+    description: Raw reasons for the orders
+    columns:
+      - name: order_id
+        description: Foreign key for the stg_adventure_works__order_hearder table
+      - name: reason_id
+        description: Foreign key for the stg_adventure_works__sales_reasons table

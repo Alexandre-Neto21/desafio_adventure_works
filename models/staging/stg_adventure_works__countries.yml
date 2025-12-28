@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_adventure_works__countries
+    description: Countries raw informations
+    columns:
+      - name: country_code
+        description: Primary key of the table
+        tests:
+          - unique
+          # - not_null, initially considered not null, but there is one country (Namibia) where the conutryregioncode is null, verify data
+          
