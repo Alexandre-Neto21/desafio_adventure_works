@@ -21,8 +21,8 @@ models/
     ├── dim__customers.sql
     ├── dim__products.sql
     ├── dim__dates.sql
-    ├── dim__sales_reason.sql
-    ├── dim__location.sql
+    ├── dim__reasons.sql
+    ├── dim__locations.sql
     └── fct__sales.sql
 
 ```
@@ -35,11 +35,11 @@ models/
 
 Below you can access the visualizations:
 
-[Original ERD](https://drive.google.com/file/d/14zQMR68W884BrbHsitqVBdm49kyJMayp/view?usp=sharing): Adventure Works OLTP schema
+[Original ERD](https://drive.google.com/file/d/1Lwvm2OTMlt_dlQmlnIO9Q_Mug1rchrLo/view?usp=sharing): Adventure Works OLTP schema
 
 [Conceptual Model](https://drive.google.com/file/d/1AvuyObcwPKZ83xD_8k0Rtra5GjSK-mrV/view?usp=sharing): Overview of the entities used to build the final models
 
-[Star Schema](https://drive.google.com/file/d/1ddnXvJ3TqGuZ9Snv8-7jSIgwR63lzcK1/view?usp=sharing): The dimensional model of the project, with the fact and dimension tables
+[Star Schema](https://drive.google.com/file/d/11iGXxFc4QCF2dcjgLPQPq8BdhCrlXfUF/view?usp=sharing): The dimensional model of the project, with the fact and dimension tables
 
 [dbt lineage](https://drive.google.com/file/d/18IlqztL5a6LTG5J5o9XpffELd_gmOmhX/view?usp=sharing): The dag (Directed Acyclic Graph) of the project, ilustrating how the dependencies of the models
 
