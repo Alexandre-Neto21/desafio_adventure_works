@@ -37,8 +37,11 @@ models:
         description: Freight for the order
       - name: subtotal
         description: Subtotal for the order
-      - name: ordered_online
-        description: Check if the order was made online
+      - name: order_channel
+        description: Check if the order was made online or in a physical store
+        tests:
+          - accepted_values:
+              values: ['Online','Loja física']
       - name: credit_card_id
         description: Credit card identificator
       - name: credit_card_type

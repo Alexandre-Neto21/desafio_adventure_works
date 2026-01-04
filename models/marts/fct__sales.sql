@@ -39,7 +39,7 @@ with
                 / sum (unit_price * quantity * (1-discount)) over (partition by order_id) as freight_allocated
             , unit_price * quantity as gross_total
             , unit_price * quantity * (1-discount) as net_total
-            , ordered_online
+            , order_channel
             , credit_card_id
             , credit_card_type
         from joined_tables
