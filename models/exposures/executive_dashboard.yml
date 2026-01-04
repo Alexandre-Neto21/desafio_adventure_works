@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+  - name: adventure_works_dashboard
+    type: dashboard
+    url: https://app.powerbi.com/view?r=eyJrIjoiZDk1NWIxOWYtMWFiNC00MzNlLTllZWYtM2RlNmE1MTRmMmJmIiwidCI6IjI0NzU1NTI2LWE5YWEtNGEwMS04ZjFkLWRlNDk1NjEzYjE3YSJ9
+    description: Dashboard executivo
+
+    depends_on:
+      - ref('fct__sales')
+      - ref('dim__products')
+      - ref('dim__locations')
+      - ref('dim__customers')
+      - ref('dim__dates')
+      - ref('dim__reasons')
+
+    owner:
+      name: Alexandre Neto
+      email: alexandrejorgeneto21@gmail.com
