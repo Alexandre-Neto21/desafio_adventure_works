@@ -41,8 +41,8 @@ models:
         description: Total without discount for the product
       - name: net_total
         description: Total with discount for the product
-      - name: ordered_online
-        description: Check if the order was made online
+      - name: order_channel
+        description: Online or physical store
       - name: credit_card_id
         description: Credit card identificator
       - name: credit_card_type

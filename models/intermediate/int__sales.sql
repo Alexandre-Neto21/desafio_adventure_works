@@ -30,7 +30,10 @@ with
             , stg_order_headers.tax_amount
             , stg_order_headers.freight as freight_amount
             , stg_order_headers.subtotal
-            , stg_order_headers.ordered_online
+            , case 
+                when stg_order_headers.ordered_online = 'Yes' then "Online"
+                when stg_order_headers.ordered_online = 'No' then "Loja física"
+            end as order_channel
             , stg_order_headers.credit_card_id
             , stg_credit_cards.credit_card_type
         from stg_order_details
